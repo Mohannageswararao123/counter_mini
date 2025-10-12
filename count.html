@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="counter.css">
+
+
+</head>
+<body>
+    <section>
+        <center><h1 class="h1">Counter</h1>
+        <h1 id="count"> 0 </h1>
+
+
+
+    <button id="inc">Start</button>
+    <button id="res">Reset</button>
+    <button id="dec">Stop </button>
+    </center>
+
+
+    </section>
+    
+    <script>
+        const counter=document.getElementById("count");
+        const increase=document.getElementById("inc");
+        const decrease=document.getElementById("dec");
+        const reset=document.getElementById("res");
+        let count=0;
+        increase.addEventListener("click", () => {
+            count++;
+            counter.innerText=count
+            updateDisplay();
+        
+
+        })
+        decrease.addEventListener("click", () => {
+            count--;
+            counter.innerText=count
+            updateDisplay();
+
+        })
+        reset.addEventListener("click", () => {
+            count=0;
+            counter.innerText=count
+            updateDisplay();
+        })
+        function updateDisplay(){
+            if (count>0){
+                counter.style.color="blue";
+            }
+            else if(count<0){
+                counter.style.color="red";
+            }
+            else{
+                counter.style.color="black";
+            }
+        }
+
+        
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
